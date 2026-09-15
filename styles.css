@@ -1,10 +1,11 @@
 :root {
-  --ink: #0c0b0a;
-  --paper: #f3ece3;
-  --cream: #e8ddd0;
-  --amber: #d4a574;
-  --mute: #9a9084;
-  --line: rgba(243, 236, 227, 0.12);
+  --ink: #111111;
+  --paper: #f3ede2;
+  --cream: #f3ede2;
+  --white: #ffffff;
+  --accent: #c45132;
+  --mute: rgba(243, 237, 226, 0.58);
+  --line: rgba(243, 237, 226, 0.14);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Syne", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -72,7 +73,7 @@ button {
   left: 0;
   width: 14px;
   height: 14px;
-  border: 1px solid var(--amber);
+  border: 1px solid var(--accent);
   border-radius: 50%;
   pointer-events: none;
   z-index: 100;
@@ -84,7 +85,7 @@ button {
 .cursor.on-link {
   width: 44px;
   height: 44px;
-  background: rgba(212, 165, 116, 0.15);
+  background: rgba(196, 81, 50, 0.18);
 }
 
 .nav {
@@ -99,8 +100,16 @@ button {
   padding: 1.1rem max(1.25rem, env(safe-area-inset-right)) 1.1rem
     max(1.25rem, env(safe-area-inset-left));
   padding-top: max(1.1rem, env(safe-area-inset-top));
-  background: rgba(12, 11, 10, 0.92);
+  background: rgba(17, 17, 17, 0.96);
+}
+
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   backdrop-filter: blur(14px);
+  pointer-events: none;
 }
 
 .logo {
@@ -120,7 +129,6 @@ button {
 .nav-links {
   display: flex;
   gap: 1.6rem;
-  z-index: 55;
 }
 
 .nav-links a,
@@ -141,7 +149,7 @@ figcaption,
 
 .nav-ig {
   justify-self: end;
-  color: var(--amber);
+  color: var(--accent);
 }
 
 .menu-btn {
@@ -199,39 +207,19 @@ body.menu-open .menu-btn span:last-child {
 }
 
 .eyebrow {
-  color: var(--amber);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
 h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(4.2rem, 11vw, 9.4rem);
-  line-height: 0.82;
-  letter-spacing: -0.03em;
-}
-
-h1 .line {
-  display: block;
-  max-width: 100%;
-}
-
-h1 .italic {
-  font-style: italic;
-  color: var(--cream);
-}
-
-h1 .outline {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--amber);
-}
-
-.lede {
+  font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   max-width: min(34rem, 100%);
-  margin: 1.6rem 0 2rem;
-  color: var(--cream);
-  font-size: 1.05rem;
-  overflow-wrap: break-word;
+  margin: 0 0 2rem;
+  color: var(--paper);
 }
 
 .hero-actions {
@@ -253,19 +241,20 @@ h1 .outline {
 }
 
 .btn-fill {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-fill:hover {
   background: var(--paper);
   color: var(--ink);
   border-color: var(--paper);
 }
 
-.btn-fill:hover {
-  background: var(--amber);
-  border-color: var(--amber);
-}
-
 .btn-ghost:hover {
-  border-color: var(--amber);
-  color: var(--amber);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .hero-frame {
@@ -324,7 +313,7 @@ h1 .outline {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.4rem;
-  color: var(--amber);
+  color: var(--accent);
 }
 
 @keyframes tick {
@@ -351,7 +340,7 @@ h1 .outline {
 }
 
 .kicker {
-  color: var(--amber);
+  color: var(--accent);
   margin-bottom: 0.8rem;
 }
 
@@ -364,7 +353,7 @@ h2 {
 
 h2 em {
   font-style: italic;
-  color: var(--amber);
+  color: var(--accent);
 }
 
 .section-note {
@@ -396,7 +385,7 @@ h2 em {
   width: 100%;
   aspect-ratio: 9 / 16;
   overflow: hidden;
-  background: #080807;
+  background: var(--ink);
   border: 1px solid var(--line);
 }
 
@@ -409,7 +398,7 @@ h2 em {
   height: 100%;
   object-fit: cover;
   display: block;
-  background: #080807;
+  background: var(--ink);
 }
 
 .reel-copy {
@@ -431,7 +420,7 @@ h2 em {
 .reel-meta {
   display: flex;
   justify-content: space-between;
-  color: var(--amber);
+  color: var(--accent);
   margin-bottom: 0.35rem;
 }
 
@@ -444,8 +433,8 @@ h2 em {
   font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--amber);
-  border-bottom: 1px solid var(--amber);
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
   padding-bottom: 0.2rem;
 }
 
@@ -476,7 +465,7 @@ h2 em {
   font-style: italic;
   font-family: var(--serif);
   font-size: 1.45rem;
-  color: var(--amber);
+  color: var(--accent);
 }
 
 .services {
@@ -499,7 +488,7 @@ h2 em {
 .service-list span {
   font-family: var(--mono);
   font-size: 0.68rem;
-  color: var(--amber);
+  color: var(--accent);
   letter-spacing: 0.16em;
 }
 
@@ -569,36 +558,52 @@ h2 em {
 
 @media (max-width: 900px) {
   .nav {
-    grid-template-columns: 1fr auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
   }
   .nav-ig {
     display: none;
   }
+  .logo,
   .menu-btn {
-    display: flex;
     position: relative;
     z-index: 60;
+  }
+  .menu-btn {
+    display: flex;
     width: 44px;
     height: 44px;
     align-items: center;
+    flex-shrink: 0;
   }
   .nav-links {
-    position: fixed;
-    inset: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: calc(100svh - 100%);
     background: var(--ink);
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.8rem;
-    font-size: 1.6rem;
-    letter-spacing: 0.08em;
-    transform: translateY(-110%);
-    transition: transform 0.4s ease;
-    mix-blend-mode: normal;
-    padding: env(safe-area-inset-top) 1.25rem env(safe-area-inset-bottom);
+    gap: 1.6rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top: 1px solid var(--line);
+    padding: 2rem 1.25rem max(2rem, env(safe-area-inset-bottom));
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
   }
   body.menu-open .nav-links {
     transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   .nav-links a {
     font-family: var(--serif);
@@ -620,10 +625,8 @@ h2 em {
     display: none;
   }
   h1 {
-    font-size: clamp(2.4rem, 12vw, 3.2rem);
-  }
-  h1 .outline {
-    -webkit-text-stroke-width: 0.8px;
+    font-size: clamp(1.45rem, 6.4vw, 1.95rem);
+    margin-bottom: 1.4rem;
   }
   .hero {
     min-height: 0;
@@ -640,10 +643,6 @@ h2 em {
   .hero-meta span:nth-child(2),
   .hero-meta span:last-child {
     display: none;
-  }
-  .lede {
-    font-size: 0.98rem;
-    margin: 1.1rem 0 1.4rem;
   }
   .hero-actions {
     width: 100%;
