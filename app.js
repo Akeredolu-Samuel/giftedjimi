@@ -9,7 +9,7 @@ function reelCard(item, i) {
     <article class="reel">
       <div class="reel-player${shape}">
         <video
-          src="${item.src}"${poster}
+          src="${encodeURI(item.src)}"${poster}
           controls
           playsinline
           preload="metadata"
