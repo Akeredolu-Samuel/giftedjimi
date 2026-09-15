@@ -215,12 +215,30 @@ body.menu-open .menu-btn span:last-child {
 h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.7rem, 3.4vw, 2.7rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  max-width: min(34rem, 100%);
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  max-width: min(36rem, 100%);
   margin: 0 0 2rem;
   color: var(--ink);
+}
+
+h1 .hi {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.7rem, 7vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0 0 0.85rem;
+}
+
+h1 .hi em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .hero-actions {
@@ -632,8 +650,13 @@ h2 em {
     display: none;
   }
   h1 {
-    font-size: clamp(1.45rem, 6.4vw, 1.95rem);
+    font-size: clamp(1.15rem, 4.2vw, 1.4rem);
+    line-height: 1.5;
     margin-bottom: 1.4rem;
+  }
+  h1 .hi {
+    font-size: clamp(2.35rem, 12vw, 3.4rem);
+    margin-bottom: 0.7rem;
   }
   .hero {
     min-height: 0;
