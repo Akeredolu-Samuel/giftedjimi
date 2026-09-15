@@ -4,8 +4,8 @@
   --cream: #f3ede2;
   --white: #ffffff;
   --accent: #c45132;
-  --mute: rgba(243, 237, 226, 0.58);
-  --line: rgba(243, 237, 226, 0.14);
+  --mute: rgba(17, 17, 17, 0.55);
+  --line: rgba(17, 17, 17, 0.12);
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Syne", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -25,8 +25,8 @@ html {
 }
 
 body {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--white);
+  color: var(--ink);
   font-family: var(--sans);
   font-weight: 400;
   line-height: 1.5;
@@ -62,8 +62,8 @@ button {
   position: fixed;
   inset: 0;
   z-index: 5;
-  opacity: 0.09;
-  mix-blend-mode: overlay;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -100,7 +100,7 @@ button {
   padding: 1.1rem max(1.25rem, env(safe-area-inset-right)) 1.1rem
     max(1.25rem, env(safe-area-inset-left));
   padding-top: max(1.1rem, env(safe-area-inset-top));
-  background: rgba(17, 17, 17, 0.96);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .nav::before {
@@ -166,7 +166,7 @@ figcaption,
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--paper);
+  background: var(--ink);
   transition: transform 0.3s;
 }
 
@@ -185,6 +185,7 @@ body.menu-open .menu-btn span:last-child {
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
+  background: var(--white);
 }
 
 .hero-meta {
@@ -219,7 +220,7 @@ h1 {
   letter-spacing: -0.02em;
   max-width: min(34rem, 100%);
   margin: 0 0 2rem;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .hero-actions {
@@ -247,9 +248,9 @@ h1 {
 }
 
 .btn-fill:hover {
-  background: var(--paper);
+  background: var(--cream);
   color: var(--ink);
-  border-color: var(--paper);
+  border-color: var(--ink);
 }
 
 .btn-ghost:hover {
@@ -283,7 +284,7 @@ h1 {
   width: 16px;
   background: repeating-linear-gradient(
     to bottom,
-    var(--paper) 0 8px,
+    var(--ink) 0 8px,
     transparent 8px 22px
   );
   opacity: 0.35;
@@ -303,6 +304,7 @@ h1 {
   padding: 0.9rem 0;
   width: 100%;
   max-width: 100%;
+  background: var(--cream);
 }
 
 .ticker-track {
@@ -366,6 +368,7 @@ h2 em {
 
 .work {
   border-top: 1px solid var(--line);
+  background: var(--cream);
 }
 
 .work-grid {
@@ -443,11 +446,12 @@ h2 em {
   grid-template-columns: 0.7fr 1.3fr;
   gap: 3rem;
   border-top: 1px solid var(--line);
+  background: var(--cream);
 }
 
 .about-body {
   font-size: 1.2rem;
-  color: var(--cream);
+  color: var(--ink);
 }
 
 .about-body p + p {
@@ -458,7 +462,7 @@ h2 em {
   font-family: var(--serif);
   font-size: clamp(1.6rem, 2.6vw, 2.15rem);
   line-height: 1.25;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .about-end {
@@ -470,6 +474,7 @@ h2 em {
 
 .services {
   border-top: 1px solid var(--line);
+  background: var(--white);
 }
 
 .service-list {
@@ -509,6 +514,7 @@ h2 em {
   text-align: center;
   padding-bottom: 5rem;
   border-top: 1px solid var(--line);
+  background: var(--white);
 }
 
 .contact-ways {
@@ -537,6 +543,7 @@ h2 em {
     max(2rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
   color: var(--mute);
   border-top: 1px solid var(--line);
+  background: var(--cream);
 }
 
 @media (hover: none), (pointer: coarse) {
@@ -584,7 +591,7 @@ h2 em {
     left: 0;
     right: 0;
     height: calc(100svh - 100%);
-    background: var(--ink);
+    background: var(--cream);
     flex-direction: column;
     justify-content: center;
     align-items: center;
